@@ -176,5 +176,3 @@ DBI::dbGetQuery(statcast_db, "create index milb_pbp_home_level_id on milb_pbp (h
 DBI::dbGetQuery(statcast_db, "drop index milb_pbp_away_level_id")
 
 DBI::dbGetQuery(statcast_db, "create index milb_pbp_away_level_id on milb_pbp (away_level_id)")
-
-
