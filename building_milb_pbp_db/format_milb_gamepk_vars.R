@@ -1,5 +1,7 @@
 #### Align formatting of MiLB game_pk files
 
+library(tidyverse)
+
 format_milb_gamepk_vars <- function(df) {
   
   # character
