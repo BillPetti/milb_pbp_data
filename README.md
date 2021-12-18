@@ -13,7 +13,7 @@ Here is a key for non-MLB levels and their corresponding code
 
 1 = MLB</br> 
 11 = Triple-A</br> 
-12 = Doubl-A</br> 
+12 = Double-A</br> 
 13 = Class A Advanced</br> 
 14 = Class A</br> 
 15 = Class A Short Season</br> 
