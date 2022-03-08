@@ -17,11 +17,11 @@ source('map_milb_game_pks.R')
 ## if you need to update the milb game_pks to pull, uncomment and run the following functions 
 # pull all game_pk IDs for minor league games since 2010
 
-# milb_game_pks_bind <- map_milb_game_pks(start_date = '2010-01-01', 
-#                                         end_date = '2020-12-31', 
-#                                         milb_levels = c(11,12,13,14,15,5442,16,17))
-# 
-# write_csv(milb_game_pks_bind, '~/milb_pbp_data/milb_game_pk_master.csv')
+milb_game_pks_bind <- map_milb_game_pks(start_date = '2010-01-01',
+                                        end_date = '2021-12-31',
+                                        milb_levels = c(11,12,13,14,15,5442,16,17))
+
+write_csv(milb_game_pks_bind, '~/milb_pbp_data/milb_game_pk_master.csv')
 
 # read in game_pk IDs
 
