@@ -6,7 +6,9 @@ library(tidyverse)
 
 map_milb_game_pks <- function(start_date = '2021-06-01', 
                               end_date = '2021-06-01', 
-                              milb_levels = c(11,12,13,14,15,5442,16,17)) {
+                              milb_levels = c(11,12,13,
+                                              14,15,5442,
+                                              16,17)) {
   
   dates <- seq.Date(as.Date(start_date), as.Date(end_date), by = 'day')
   
@@ -15,11 +17,13 @@ map_milb_game_pks <- function(start_date = '2021-06-01',
   
   safe_gp <- purrr::safely(get_game_pks_mlb)
   
-  milb_gp <- purrr::map2(.x = gp_grid$levels,
-                         .y = gp_grid$dates,
-                         ~{message(paste0('Collecting all game_pks on ', .y, ' for level ', .x))
+  milb_gp <- purrr::map2(.x = gp_grid$levels
+                         , .y = gp_grid$dates
+                         , ~{message(glue::glue('Collecting all game_pks on {.y} for level {.x}'))
                            
-                           safe_gp(date = .y, level_ids = .x)
+                           safe_gp(date = .y
+                                   , level_ids = .x
+                           )
                          })
   
   milb_gp_bind <- milb_gp %>%
